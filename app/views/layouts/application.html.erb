@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Management System, now with AJAX!</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="jumbotron">
+      <h1>Welcome to the Users SPA</h1>
+      <p>A single-page app that lets you manage users.</p>
+      <p>Now with bootstrap.js, form helpers, and AJAX.</p>
+
+    </div>
+    <%= yield %>
+  </body>
+</html>

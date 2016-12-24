@@ -1,0 +1,23 @@
+<h1>Edit User</h1>
+
+<%=form_for @user, url:{action:'update'} do |f| %>
+  <%= label_tag :first_name, "First Name" %>
+  <%= f.text_field :first_name %>
+  <%= label_tag :last_name, "Last Name" %>
+  <%= f.text_field :last_name %>
+  <%= label_tag :email_address, "Email" %>
+  <%= f.text_field :email_address %>
+  <%= label_tag :password, "Password" %>
+  <%= f.password_field :password %>
+  <%= f.submit "Edit profile" %>
+<% end %>
+
+<!-- <form action='/users/<%= @user.id %>' method='post'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="hidden" name="_method" value="patch">
+  <label>First Name:<input type='text' name='user[first_name]' value="<%= @user.first_name %>"/></label>
+  <label>Last Name:<input type='text' name='user[last_name]' value="<%= @user.last_name %>"/></label>
+  <label>Email:<input type='text' name='user[email_address]' value="<%= @user.email_address %>"/></label>
+  <label>Password:<input type='text' name='user[password]' value="<%= @user.password %>"/></label>
+  <input type='submit' value='Update' />
+</form> -->

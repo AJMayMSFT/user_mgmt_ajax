@@ -1,0 +1,22 @@
+<h2>Edit User</h2>
+
+<%=form_for @user, url:{action:'update'}, html: {id: 'update_user' } do |f| %>
+<input type="hidden" id="user_id" value="<%= @user.id %>">
+<div class="form-group">
+  <%= label_tag :first_name, "First Name" %>
+  <%= f.text_field :first_name %>
+</div>
+<div class="form-group">
+  <%= label_tag :last_name, "Last Name" %>
+  <%= f.text_field :last_name %>
+</div>
+<div class="form-group">
+  <%= label_tag :email_address, "Email" %>
+  <%= f.text_field :email_address %>
+</div>
+<div class="form-group">
+  <%= label_tag :password, "Password" %>
+  <%= f.password_field :password %>
+</div>
+  <%= f.submit "Update profile", :class => 'btn btn-default' %>
+<% end %>

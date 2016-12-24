@@ -1,0 +1,21 @@
+<h1>New User</h1>
+<%=form_for @user, url:{action:'create'} do |f| %>
+  <%= label_tag :first_name, "First Name" %>
+  <%= f.text_field :first_name %>
+  <%= label_tag :last_name, "Last Name" %>
+  <%= f.text_field :last_name %>
+  <%= label_tag :email_address, "Email" %>
+  <%= f.text_field :email_address %>
+  <%= label_tag :password, "Password" %>
+  <%= f.password_field :password %>
+  <%= f.submit "New user" %>
+<% end %>
+
+<!-- <form action='/users' method='post'>
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <label>First Name:<input type='text' name='user[first_name]' /></label>
+  <label>Last Name:<input type='text' name='user[last_name]' /></label>
+  <label>Email:<input type='text' name='user[email_address]' /></label>
+  <label>Password:<input type='text' name='user[password]' /></label>
+  <input type='submit' value='Create' />
+</form> -->
