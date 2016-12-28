@@ -16,6 +16,20 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+function submit_user_update(){
+  $('#update_user').submit(function(){
+    var id = $(this).children('#user_id').attr('value')
+    $.post('/users/' + id, $(this).serialize(), function(response){
+      console.log("This ran, goddamnit")
+      console.log(response);
+      $('.details').html(response);
+    }, 'html');
+
+    return false;
+  })
+}
+
+
 
 $(document).ready(function(){
   $(document).on('click', 'li', function(){
@@ -44,17 +58,9 @@ $(document).ready(function(){
     $.get('/users/' + id + '/edit', function(response){
       $('.details').html(response);
     }, 'html');
+    submit_user_update();
   });
 
-  $('#update_user').submit(function(){
-    var id = $(this).children('#user_id').attr('value')
-    $.post('/users/' + id, $(this).serialize(), function(response){
-      console.log("This ran, goddamnit")
-      console.log(response);
-      $('.details').html(response);
-    }, 'html');
 
-    return false;
-  })
 
 });
